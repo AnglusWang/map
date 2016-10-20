@@ -23,7 +23,7 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="1Afh1QNwR6fgnIHKNEaYI5dL95LbemcM"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".HelloBaiduMapActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
