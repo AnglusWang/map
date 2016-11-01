@@ -24,7 +24,7 @@ public class HelloBaiduMapActivity extends BaseActivity {
     // 湖科大 经纬度坐标
     protected LatLng hnustLatlng = new LatLng(27.8957165, 112.9203713);
     // 北京天安门 经纬度坐标
-    protected LatLng beijinLatlng = new LatLng(39.9054936,116.395443);
+    protected LatLng beijinLatlng = new LatLng(39.9054936, 116.395443);
 
     private MapView mMapView = null;
     private BroadcastReceiver receiver;
