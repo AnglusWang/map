@@ -4,7 +4,6 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 
@@ -22,12 +21,9 @@ public class HelloBaiduMapActivity extends BaseActivity {
     private BroadcastReceiver receiver;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    public void init() {
         // 注册SDK 检测监听广播
         registerSDKCheckReceiver();
-
     }
 
     @Override
@@ -91,7 +87,7 @@ public class HelloBaiduMapActivity extends BaseActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         unregisterReceiver(receiver);
+        super.onDestroy();
     }
 }

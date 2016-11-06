@@ -16,23 +16,23 @@ import com.baidu.mapapi.model.LatLng;
  * Created by Anglus on 2016/10/18.
  */
 
-public class BaseActivity extends Activity {
+public abstract class BaseActivity extends Activity {
 
     // 湖科大 经纬度坐标
     protected LatLng hnustLatlng = new LatLng(27.8957165, 112.9203713);
     // 北京天安门 经纬度坐标
     protected LatLng beijinLatlng = new LatLng(39.9054936, 116.395443);
 
-    protected MapView mMapView = null;
+    protected MapView mMapView;
     protected BaiduMap baiduMap;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected final void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
         // 获取地图控件引用
         mMapView = (MapView) findViewById(R.id.bmapView);
-
         baiduMap = mMapView.getMap();// 获取地图控制器
 
 //        1. 隐藏缩放按钮、比例尺
@@ -56,7 +56,11 @@ public class BaseActivity extends Activity {
 //        6. 获取地图 Ui 控制器，隐藏指南针
 //        UiSettings uiSettings = baiduMap.getUiSettings();
 //        uiSettings.setCompassEnabled(false);
+
+        init();
     }
+
+    public abstract void init();// 给子类初始化数据
 
     /**
      * 在屏幕中心显示一个 Toast
